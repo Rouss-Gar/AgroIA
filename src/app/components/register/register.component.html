@@ -1,0 +1,35 @@
+<div class="login-box">
+  <h2 class="title">Regístrate</h2>
+  <h3 class="subtitle">Crear tu cuenta</h3>
+
+  <form (ngSubmit)="register()" class="register-form">
+    <div class="form-group">
+      <input type="text" pInputText id="username" [(ngModel)]="username" name="username" placeholder="Nombre" required />
+    </div>
+
+    <div class="form-group">
+      <input type="email" pInputText id="email" [(ngModel)]="email" name="email" placeholder="Correo" required />
+    </div>
+
+    <div class="form-group">
+      <p-password 
+        [(ngModel)]="password" 
+        id="password" 
+        name="password" 
+        [toggleMask]="true" 
+        [feedback]="false"
+        placeholder="Contraseña" 
+        required
+      ></p-password>
+    </div>
+
+    <div class="form-group">
+      <button pButton type="submit" label="Regístrate" class="register-btn" [disabled]="isLoading"></button>
+    </div>
+
+    <div class="login-link">
+      <span>¿Ya tienes cuenta?</span>
+      <a class="inicia-sesion" href="/login">Inicia Sesión</a>
+    </div>
+  </form>
+</div>

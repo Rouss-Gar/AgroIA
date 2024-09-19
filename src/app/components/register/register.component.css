@@ -1,0 +1,181 @@
+@import 'primeicons/primeicons.css';
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif; 
+}
+
+.login-box::before {
+  content: "";
+  display: block;
+  width: 200px;
+  height: 147px;
+  margin: 0 auto 10px;
+  background-image: url('../../assets/AgroIA\ Logo\ 1.png');
+  background-size: cover; 
+  background-position: center;
+  border-radius: 50%;
+}
+
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 40px;
+  background: linear-gradient(#0B6477, #80ED99);  
+  border-radius: 10px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+h3 {
+  text-align: center;
+  color: white;
+}
+
+.login-box h2 { 
+  margin: 0 0 10px;
+  padding: 0;
+  color: white;
+  text-align: center;  
+}
+
+.login-box .form-group { 
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.login-box input[pInputText],
+.login-box p-password input {
+  width: 100%;
+  padding: 10px;
+  background: rgba(70, 55, 35, 0.3); 
+  border: 2px solid transparent; 
+  outline: none;
+  color: black;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: border 0.3s ease;
+}
+
+.login-box input[pInputText]:hover,
+.login-box input[pInputText]:focus,
+.login-box p-password input:hover,
+.login-box p-password input:focus {
+  border: 2px solid #2a6c56; 
+}
+
+.login-box input::placeholder,
+.login-box p-password input::placeholder {
+  color: #b8b5b5; 
+}
+
+p-password {
+  width: 100%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.3); 
+  border-radius: 5px; 
+}
+
+.register-btn {
+  width: 100%;
+  padding: 10px;
+  background: #2a6c56;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.register-btn:hover {
+  background: #1e5243;
+}
+
+span {  
+  margin-left: 0.5em;
+  color: black;
+  font-weight: 550;
+}
+
+.inicia-sesion { 
+  margin-left: 3.5rem;
+  color: #000879;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.login-link a:hover {  
+  text-decoration: underline;
+} 
+
+/*-------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------*/
+
+/* Diseño base para pantallas grandes
+.login-box {
+  width: 400px;
+  padding: 40px;
+}
+
+@media (max-width: 768px) {
+  .login-box {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .login-box h2, .login-box h3 {
+    font-size: 1.5rem;
+  }
+
+  .login-box input[pInputText],
+  .login-box p-password input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .register-btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .login-box h2, .login-box h3 {
+    font-size: 1.2rem;
+  }
+
+  .login-box input[pInputText],
+  .login-box p-password input {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .register-btn {
+    font-size: 12px;
+    padding: 6px;
+  }
+}
+
+.login-box::before {
+  width: 150px;
+  height: 120px;
+}
+
+@media (max-width: 480px) {
+  .login-box::before {
+    width: 100px;
+    height: 80px;
+  }
+} */
