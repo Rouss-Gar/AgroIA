@@ -13,7 +13,7 @@ html, body {
   width: 200px;
   height: 147px;
   margin: 0 auto 10px;
-  background-image: url('../../assets/AgroIA\ Logo\ 1.png');
+  background-image: url('#');
   background-size: cover; 
   background-position: center;
   border-radius: 50%;
@@ -187,77 +187,3 @@ span {
 .login-link a:hover {  
   text-decoration: underline;
 }
-
-/*-------------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------------*/
-
-/* /*
-.login-box {
-  width: 400px;
-  padding: 40px;
-}
-
-@media (max-width: 768px) {
-  .login-box {
-    width: 90%;
-    padding: 30px;
-  }
-
-  .login-box h2 {
-    font-size: 1.5rem;
-  }
-
-  .login-box input[pInputText],
-  .login-box p-password input {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  .register-btn {
-    font-size: 14px;
-    padding: 8px;
-  }
-}
-
-@media (max-width: 480px) {
-  .login-box {
-    width: 90%;
-    padding: 20px;
-  }
-
-  .login-box h2 {
-    font-size: 1.2rem;
-  }
-
-  .login-box input[pInputText],
-  .login-box p-password input {
-    font-size: 12px;
-    padding: 6px;
-  }
-
-  .register-btn {
-    font-size: 12px;
-    padding: 6px;
-  }
-
-  .social-login {
-    flex-direction: column;
-  }
-
-  .google-btn, .facebook-btn {
-    padding: 8px;
-  }
-}
-
-.login-box::before {
-  width: 150px;
-  height: 120px;
-}
-
-@media (max-width: 480px) {
-  .login-box::before {
-    width: 100px;
-    height: 80px;
-  }
-} */
