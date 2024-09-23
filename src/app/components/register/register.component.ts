@@ -15,6 +15,7 @@ export class RegisterComponent {
   username: string = '';  
   isPasswordVisible: boolean = false;
   isLoading: boolean = false;
+  showPassword: boolean = false; 
 
   constructor(private authservices: authservices, private router: Router) {}  
 

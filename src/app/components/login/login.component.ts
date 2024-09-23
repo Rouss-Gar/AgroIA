@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'] 
+  styleUrl: './login.component.css'
 })
 
 export class LoginComponent {
@@ -15,6 +15,7 @@ export class LoginComponent {
   username: string = '';  
   isPasswordVisible: boolean = false;
   isLoading: boolean = false;
+  showPassword: boolean = false; 
 
   constructor(private authservices: authservices, private router: Router) {}
 

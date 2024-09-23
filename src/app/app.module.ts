@@ -3,6 +3,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from "@angular/core";
 import { AppComponent } from "./app.component";
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { CheckboxModule } from 'primeng/checkbox';
 import { AppRoutingModule } from "./app-routing.module";
 import { environment } from "./environment/environment";
 import { AngularFireModule } from "@angular/fire/compat";
@@ -22,10 +23,11 @@ import { FormsModule } from '@angular/forms';
         BrowserModule,
         BrowserAnimationsModule,
         AppRoutingModule,
-        InputTextModule,
+        InputTextModule,        
         PasswordModule,
         ButtonModule,
         FormsModule,
+        CheckboxModule,
         SweetAlert2Module.forRoot(),
         AngularFireModule.initializeApp(environment.firebaseConfig)
     ],
