@@ -13,12 +13,12 @@
       <li><a href="#">Contáctanos</a></li>
     </ul>
     <div class="navbar-buttons">
-      <a href="/login">
-        <button class="btn">Iniciar Sesión</button>
-      </a>
-      <a href="/register">
-        <button class="btn">Registrarse</button>
-      </a>
+      <div>
+        <button (click)="goTologin()" class="btn">Iniciar Sesión</button>
+      </div>
+      <div>
+        <button (click)="goToregister()" class="btn">Registrarse</button>
+      </div>
     </div>
   </nav>
 </header>
