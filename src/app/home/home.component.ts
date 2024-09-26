@@ -7,7 +7,12 @@ import { Router } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  
+  isMenuActive: boolean = false;
+
+  // Método para alternar el estado del menú
+  toggleMenu() {
+    this.isMenuActive = !this.isMenuActive;
+  }
 constructor(private router:Router){}
 
 goTologin(){this.router.navigate(['/login'])}

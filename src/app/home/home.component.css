@@ -10,7 +10,17 @@
     background-color: #1B1C1E;
     border-radius: 10px;
     padding: 20px;
+
   }
+.Titulo {
+  color: #0AD1C8;
+}
+
+img {
+  width: 50px;
+  margin: 10px 20px;
+}
+  
   
   /* Estilos del botón */
   .btn {
@@ -196,11 +206,6 @@
       padding: 10px;
     }
   }
-
-  main {
-    padding: 20px;
-    background-color: #F9F9F9;
-  }
   
   /* Sections Styles */
   section {
@@ -231,14 +236,138 @@
     padding-left: 0;
     margin: 20px 0;
   }
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+  
+  /* Estilos para el menú responsive */
+  @media (max-width: 768px) {
+    .navbar-menu {
+      display: none;
+      flex-direction: column;
+      gap: 20px;
+      background-color: #1B1C1E;
+      position: absolute;
+      top: 70px;
+      right: 0;
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .navbar-menu.active {
+      display: flex;
+    }
+  
+    .menu-toggle {
+      display: flex;
+    }
+  
+    .navbar-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  /* Estilos del menú hamburguesa */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px 0;
+  transition: 0.4s;
+}
+
+/* Estilos para el menú responsive */
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #1B1C1E;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .navbar-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.card {
+  background-color: #F0F8FF;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px #0AD1C8;
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+  margin: 10px;
+}
+
+/* Responsive para las tarjetas */
+@media (max-width: 768px) {
+  .card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+}
+
   
   main {
     font-size: 18px;
     color: #555;
-    background-color: #E0F7FA;
-    padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .cardContain{
+    display: flex;
+    gap: 20px;
   }
   
   /* Call to Action Button */
