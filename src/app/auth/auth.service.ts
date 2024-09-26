@@ -87,7 +87,6 @@ export class authservices {
         email: email,
         username: username
       });
-      this.router.navigate(['/home']);
       return 'Registration successful'; 
     } catch (error: unknown) {
       console.error('Error during registration:', error);

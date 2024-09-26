@@ -40,13 +40,13 @@ export class RegisterComponent {
       const message = await this.authservices.register(this.email, this.password, this.username);
 
       Swal.fire({
-        icon: 'success',
-        title: 'register exitoso',
+        icon: message === 'Registration successful'? 'success': 'error',
+        title: message === 'Registration successful'? 'register exitoso':'error',
         text: message,
         confirmButtonText: 'Aceptar'
       });
 
-      this.router.navigate(['/home']);
+      this.router.navigate(['/login']);
     } catch (error: unknown) {
       let errorMessage = 'Ocurrió un error. Inténtalo de nuevo más tarde.';
       if (error instanceof Error) {

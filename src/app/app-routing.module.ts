@@ -6,15 +6,15 @@ import { LoginComponent } from './components/login/login.component';
 import { ChatbotComponent } from './components/chatbot/chatbot.component';
 
 const routes: Routes = [
-    {
-        path: '',
-        redirectTo: '/home',
-        pathMatch: 'full',
-      },
-      {
-        path: 'home',
-        component: HomeComponent,
-      },
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full',
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
   {
     path: '',
     redirectTo: '/register',
@@ -49,4 +49,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

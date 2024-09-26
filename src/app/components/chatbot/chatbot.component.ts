@@ -1,16 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 
+declare global {
+  interface Window {
+    voiceflow: any;
+  }
+}
 @Component({
   selector: 'app-chatbot',
-  standalone: true,
-  imports: [],
   templateUrl: './chatbot.component.html',
-  styleUrl: './chatbot.component.css'
+  styleUrl: './chatbot.component.css',
 })
 export class ChatbotComponent {
-  isMenuOpen = false;
+  constructor(private renderer: Renderer2) {}
 
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
+  ngOnInit() {
+    const script = this.renderer.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://cdn.voiceflow.com/widget/bundle.mjs';
+    script.onload = () => {
+      window.voiceflow.chat.load({
+        verify: { projectID: '66f501d232f136ad60bbebac' },
+        url: 'https://general-runtime.voiceflow.com',
+        versionID: 'production',
+      });
+    };
+    this.renderer.appendChild(document.body, script);
   }
 }
