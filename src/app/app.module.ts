@@ -13,14 +13,12 @@ import { ButtonModule } from 'primeng/button';
 import { RegisterComponent } from "./components/register/register.component";
 import { LoginComponent } from "./components/login/login.component";
 import { FormsModule } from '@angular/forms';
-import { ChatbotComponent } from "./components/chatbot/chatbot.component";
 import { HomeComponent } from "./home/home.component";
 @NgModule ({ 
     declarations: [
         AppComponent,
         RegisterComponent,
         LoginComponent,
-        ChatbotComponent,
         HomeComponent
     ],
     imports: [

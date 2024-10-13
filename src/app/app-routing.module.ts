@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
-import { ChatbotComponent } from './components/chatbot/chatbot.component';
 
 const routes: Routes = [
   {
@@ -34,15 +33,7 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
   },
-  {
-    path: '',
-    redirectTo: '/chatbot',
-    pathMatch: 'full',
-  },
-  {
-    path: 'chatbot',
-    component: ChatbotComponent,
-  },
+
 ];
 
 @NgModule({
