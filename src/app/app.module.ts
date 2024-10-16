@@ -10,30 +10,40 @@ import { AngularFireModule } from "@angular/fire/compat";
 import { InputTextModule } from 'primeng/inputtext';
 import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
-import { RegisterComponent } from "./components/register/register.component";
-import { LoginComponent } from "./components/login/login.component";
+import { RegisterComponent } from "./features/register/register.component";
+import { LoginComponent } from "./features/login/login.component";
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from "./home/home.component";
-@NgModule ({ 
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { TypingAnimationComponent } from './components/iu/TypingAnimation';
+import { ChatbotComponent } from './features/chatbot/chatbot.component';
+import { RetroGridComponent } from "./components/iu/RetroGrid";
+@NgModule({
     declarations: [
         AppComponent,
         RegisterComponent,
-        LoginComponent,
-        HomeComponent
+        LoginComponent,        
+        HomeComponent,        
+        ChatbotComponent,
+        TypingAnimationComponent,
+        RetroGridComponent
     ],
     imports: [
         BrowserModule,
         BrowserAnimationsModule,
+        ReactiveFormsModule,
         AppRoutingModule,
-        InputTextModule,        
+        InputTextModule,
         PasswordModule,
         ButtonModule,
         FormsModule,
+        CommonModule,
         CheckboxModule,
         SweetAlert2Module.forRoot(),
         AngularFireModule.initializeApp(environment.firebaseConfig)
     ],
     providers: [],
     bootstrap: [AppComponent]
-}) 
-export class AppModule {}
+})
+export class AppModule { }

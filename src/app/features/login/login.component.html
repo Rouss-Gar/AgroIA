@@ -1,0 +1,45 @@
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 p-10 bg-gradient-to-b from-[#0B6477] to-[#80ED99] rounded-lg shadow-lg">
+  <div class="flex justify-center items-center mb-2">
+    <img src="assets/Log.png" alt="logo" class="w-30">
+  </div>
+  <h2 class="text-white text-center mb-2">Iniciar Sesión</h2>    
+  <form #loginForm="ngForm" (ngSubmit)="login()" novalidate>
+    <div class="relative mb-5">
+      <input type="email" pInputText id="email" [(ngModel)]="email" name="email" placeholder="Correo Electrónico" required 
+        class="w-full p-2 bg-opacity-30 bg-brown-800 border-2 border-transparent rounded-md text-white focus:outline-none focus:border-teal-700 placeholder-gray-400 transition duration-300" />
+      <div *ngIf="loginForm.submitted && !email" class="text-red-500">El correo electrónico es obligatorio</div>
+    </div>
+
+    <div class="flex flex-col mb-5">
+      <div class="relative mb-5">
+        <input [type]="showPassword ? 'text':'password'" pInputText id="password" [(ngModel)]="password" name="password" placeholder="Contraseña" required 
+          class="w-full p-2 bg-opacity-30 bg-brown-800 border-2 border-transparent rounded-md text-white focus:outline-none focus:border-teal-700 placeholder-gray-400 transition duration-300" />
+        <div *ngIf="loginForm.submitted && !password" class="text-red-500">La contraseña es obligatoria</div>
+      </div>
+      <div class="flex items-center text-white">
+        <p-checkbox label="Ver Contraseña" [(ngModel)]="showPassword" [binary]="true" [ngModelOptions]="{ standalone: true }"></p-checkbox>
+      </div>
+    </div>
+
+    <div class="mb-5">
+      <button pButton type="submit" label="Iniciar Sesión" 
+        class="w-full py-2 bg-teal-700 text-white rounded-md uppercase transition duration-300 hover:bg-teal-600" 
+        [disabled]="isLoading"></button>
+    </div>
+  </form>
+
+  <div class="flex flex-col gap-4 text-center mb-5">
+    <p class="text-white">O Inicia sesión con:</p>
+    <button pButton type="button" class="flex items-center justify-center w-full gap-2 py-2 bg-blue-600 text-white rounded-md transition duration-300 hover:bg-blue-500" (click)="loginWithGoogle()">
+      <i class="pi pi-google"></i> <span>Google</span>
+    </button>
+    <button pButton type="button" class="flex items-center justify-center w-full gap-2 py-2 bg-blue-800 text-white rounded-md transition duration-300 hover:bg-blue-700" (click)="loginWithFacebook()">
+      <i class="pi pi-facebook"></i> <span>Facebook</span>
+    </button>
+  </div>
+
+  <div class="text-center mt-4">
+    <span class="text-white">¿No tienes una cuenta?</span>
+    <a class="ml-3 text-blue-600 font-bold hover:underline" href="/register">Regístrate</a>
+  </div>
+</div>
