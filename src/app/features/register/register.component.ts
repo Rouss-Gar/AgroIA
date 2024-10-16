@@ -6,9 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
 })
-
 export class RegisterComponent {
   email: string = '';
   password: string = '';
@@ -40,8 +38,8 @@ export class RegisterComponent {
       const message = await this.authservices.register(this.email, this.password, this.username);
 
       Swal.fire({
-        icon: message === 'Registration successful'? 'success': 'error',
-        title: message === 'Registration successful'? 'register exitoso':'error',
+        icon: message === 'Registration successful' ? 'success' : 'error',
+        title: message === 'Registration successful' ? 'Registro exitoso' : 'Error',
         text: message,
         confirmButtonText: 'Aceptar'
       });
@@ -55,7 +53,7 @@ export class RegisterComponent {
         } else if (error.message.includes('auth/weak-password')) {
           errorMessage = 'La contraseña es demasiado débil.';
         } else if (error.message.includes('auth/invalid-email')) {
-          errorMessage = 'El correo electrónico no es válido.'
+          errorMessage = 'El correo electrónico no es válido.';
         }
       }
       Swal.fire({

@@ -1,23 +1,23 @@
 import { Component } from '@angular/core';
-import { authservices } from '../../auth/auth.service';
+import { authservices } from '../../auth/auth.service'; 
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
 })
-
 export class LoginComponent {
+[x: string]: any;
   email: string = '';
   password: string = '';
   username: string = '';  
   isPasswordVisible: boolean = false;
   isLoading: boolean = false;
   showPassword: boolean = false; 
+  
 
-  constructor(private authservices: authservices, private router: Router) {}
+  constructor(private authservices: authservices, private router: Router) {} // Cambié authservices a authService
 
   async login() {
     if (!this.email || !this.password) {
@@ -32,7 +32,7 @@ export class LoginComponent {
   
     this.isLoading = true;
     try {
-      const message = await this.authservices.login(this.email, this.password);
+      const message = await this.authservices.login(this.email, this.password); // authService en lugar de authservices
       
       console.log(message);
       Swal.fire('Inicio de sesión exitoso', 'Has iniciado sesión correctamente', 'success');
@@ -60,7 +60,7 @@ export class LoginComponent {
   async loginWithGoogle() {
     this.isLoading = true;
     try {
-      const message = await this.authservices.loginWithGoogle();
+      const message = await this.authservices.loginWithGoogle(); // authService en lugar de authservices
       console.log(message);    
       this.router.navigate(['/home']);
     } catch (error) {
@@ -73,7 +73,7 @@ export class LoginComponent {
   async loginWithFacebook() {
     this.isLoading = true;
     try {
-      const message = await this.authservices.loginWithFacebook();
+      const message = await this.authservices.loginWithFacebook(); // authService en lugar de authservices
       console.log(message);
       this.router.navigate(['/home']);
     } catch (error) {
