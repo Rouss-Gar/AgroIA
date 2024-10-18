@@ -1,16 +1,61 @@
-<div style="padding: 20px;">
-    <h1>Consulta de Agronomía</h1>
-    <form (submit)="handleSubmit(); $event.preventDefault();">
-      <input
-        type="text"
-        [(ngModel)]="question"
-        placeholder="Escribe tu pregunta sobre sumas"
-        name="question"
-        required
-      />
-      <button type="submit">Enviar</button>
-    </form>
-    <h2>Respuesta:</h2>
-    <p>{{ response }}</p>
+<div class="min-h-screen flex flex-col items-center justify-center p-4">
+  <div class="w-full max-w-md bg-white rounded-lg bg-secondary-white shadow-lg overflow-hidden">
+    <!-- Chatbot header with centered image -->
+    <div class="bg-color-tropical-teal text-secondary-white p-4 flex items-center justify-between">
+      <div class="flex items-center justify-center space-x-2">
+        <!-- Image centered -->
+        <img
+          src="../../../assets/Log.png"        
+          class="h-8 w-8 object-contain"
+        />
+        <!-- Title next to the image -->
+      </div>
+      <span class="text-title-large">Tu Asesor Agronómico</span>
+    </div>
+
+    <!-- Chat window -->
+    <div class="p-4 h-80 overflow-y-auto bg-secondary-gray">
+      <!-- Chat messages -->
+      <div *ngFor="let message of messages" class="mb-2">
+        <div [ngClass]="message.sender === 'user' ? 'text-right' : ''">
+          <div
+            [ngClass]="message.sender === 'user' ? 'bg-customBlue-blue-default text-secondary-white' : 'bg-customBlue-blue-dark text-secondary-white'"
+            class="p-2 rounded-lg shadow-sm"
+          >
+            <p>{{ message.text }}</p>
+          </div>
+          <div class="text-body-small text-secondary-white mt-1">{{ message.time }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input area -->
+    <div class="bg-color-tropical-teal p-4 border-t border-gray-300">
+      <form (submit)="handleSubmit(); $event.preventDefault();" class="flex items-center space-x-2">
+        <!-- Input -->
+        <input
+          type="text"
+          [(ngModel)]="question"
+          placeholder="Escribe tu pregunta"
+          name="question"
+          class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+          required
+        />
+
+        <!-- Mic button, centered vertically -->
+        <button
+          type="button"
+          (click)="startVoiceRecognition()"
+          class="flex items-center justify-center bg-gray-200 hover:bg-gray-300 text-gray-600 p-2 rounded-full"
+        >
+          <span class="text-xl">🎤</span>
+        </button>
+
+        <!-- Send button -->
+        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg">
+          Enviar
+        </button>
+      </form>
+    </div>
+  </div>
 </div>
-  
