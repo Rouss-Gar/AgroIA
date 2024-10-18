@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   selector: 'app-login',
   templateUrl: './login.component.html',
 })
+
 export class LoginComponent {
 [x: string]: any;
   email: string = '';
@@ -15,6 +16,7 @@ export class LoginComponent {
   isPasswordVisible: boolean = false;
   isLoading: boolean = false;
   showPassword: boolean = false; 
+  
   
 
   constructor(private authservices: authservices, private router: Router) {} // Cambié authservices a authService
@@ -87,3 +89,5 @@ export class LoginComponent {
     this.isPasswordVisible = !this.isPasswordVisible;
   }
 }
+
+

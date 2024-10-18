@@ -1,6 +1,6 @@
-import { BrowserModule } from "@angular/platform-browser";
+import { BrowserModule} from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { NgModule } from "@angular/core";
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { AppComponent } from "./app.component";
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { CheckboxModule } from 'primeng/checkbox';
@@ -16,9 +16,11 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from "./home/home.component";
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { TypingAnimationComponent } from './components/iu/TypingAnimation';
+import { TypingAnimationComponent } from './components/UI/TypingAnimation';
 import { ChatbotComponent } from './features/chatbot/chatbot.component';
-import { RetroGridComponent } from "./components/iu/RetroGrid";
+import { RetroGridComponent } from "./components/UI/RetroGrid";
+import { GradualSpacingComponent } from "./components/UI/GradualSpacing";
+import { NavbarComponent } from "./features/navbar/navbar.component";
 @NgModule({
     declarations: [
         AppComponent,
@@ -27,7 +29,9 @@ import { RetroGridComponent } from "./components/iu/RetroGrid";
         HomeComponent,        
         ChatbotComponent,
         TypingAnimationComponent,
-        RetroGridComponent
+        RetroGridComponent,
+        GradualSpacingComponent,
+        NavbarComponent
     ],
     imports: [
         BrowserModule,
@@ -44,6 +48,7 @@ import { RetroGridComponent } from "./components/iu/RetroGrid";
         AngularFireModule.initializeApp(environment.firebaseConfig)
     ],
     providers: [],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

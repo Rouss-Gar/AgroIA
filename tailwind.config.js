@@ -6,6 +6,19 @@ module.exports = {
   theme: {
     colors: {
       //Paleta de colores
+      light: '#F7FAFC',
+      DEFAULT: '#2D3748',
+      dark: '#1A202C',
+    },
+    secondary: {
+      light: '#FEB2B2',
+      DEFAULT: '#F56565',
+      dark: '#C53030',
+    },
+    customBlue: {
+      light: '#63B3ED',
+      DEFAULT: '#4299E1',
+      dark: '#3182CE',
     },
     fontFamily: {
       // Tipografía 
