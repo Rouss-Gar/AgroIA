@@ -1,29 +1,34 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import("tailwindcss").Config} */
 module.exports = {
   content: [
     "./src/**/*.{html,ts}",
   ],
   theme: {
     colors: {
-      //Paleta de colores
-      light: '#F7FAFC',
-      DEFAULT: '#2D3748',
-      dark: '#1A202C',
-    },
-    secondary: {
-      light: '#FEB2B2',
-      DEFAULT: '#F56565',
-      dark: '#C53030',
-    },
-    customBlue: {
-      light: '#63B3ED',
-      DEFAULT: '#4299E1',
-      dark: '#3182CE',
+      // Paleta de colores principal
+      color: {
+        "deep-navy": "#213A57",
+        "teal-blue": "#0B6477",
+        "tropical-teal": "#14919B",
+        "aqua-blue": "#0AD1C8",
+        "mint-green": "#45DFB1",
+        "light-mint": "#80ED99",
+      },
+      secondary: {     
+        "white": "#FFFFFF",
+        "gray": "#2D3748",
+        "opaque": "#1A202C",
+        "red": "#FF0000",
+      },
+      customBlue: {
+        "blue-light": "#63B3ED",
+        "blue-default": "#4299E1",
+        "blue-dark": "#3182CE",
+      },
     },
     fontFamily: {
       // Tipografía 
     },
-
     extend: {
       colors: {
         border: "hsl(var(--border))",
