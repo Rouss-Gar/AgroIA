@@ -1,38 +1,28 @@
-<div class=" ">
-<header>
-  <nav class="navbar">
-    <img src="assets/Log.png" alt="logo" />
-    <div class="menu-toggle" id="mobile-menu">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </div>
-    <ul class="navbar-menu">
-      <li><a href="/home">Inicio</a></li>
-      <li><a href="#">Acerca de nosotros</a></li>
-      <li><a href="#">Contáctanos</a></li>
-    </ul>
-    <div class="navbar-buttons">
-      <div>
-        <button (click)="goTologin()" class="btn">Iniciar Sesión</button>
+<div>
+  <header class="bg-gray-900 rounded-lg p-5">
+    <nav class="flex justify-between items-center">
+      <img src="assets/Log.png" alt="logo" class="w-12 m-4" />
+      <div id="mobile-menu" class="md:hidden flex flex-col cursor-pointer">
+        <span class="w-6 h-0.5 bg-white mb-1"></span>
+        <span class="w-6 h-0.5 bg-white mb-1"></span>
+        <span class="w-6 h-0.5 bg-white"></span>
       </div>
-      <div>
-        <button (click)="goToregister()" class="btn">Registrarse</button>
+      <ul class="hidden md:flex space-x-6">
+        <li><a href="/home" class="text-white hover:bg-teal-600 rounded-lg px-3 py-2">Inicio</a></li>
+        <li><a href="#" class="text-white hover:bg-teal-600 rounded-lg px-3 py-2">Acerca de nosotros</a></li>
+        <li><a href="#" class="text-white hover:bg-teal-600 rounded-lg px-3 py-2">Contáctanos</a></li>
+      </ul>
+      <div class="hidden md:flex space-x-4">
+        <button (click)="goTologin()" class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-700">Iniciar Sesión</button>
+        <button (click)="goToregister()" class="bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-green-700">Registrarse</button>
       </div>
-    </div>
-  </nav>
-</header>
+    </nav>
+  </header>
 
-<main>
-  <div class="relative w-full h-full flex flex-col items-center justify-center">
-    <app-retro-grid
-      class="absolute inset-0"
-      [angle]="65"
-      [isDark]="false"
-    ></app-retro-grid>
+  <main class="relative w-full h-full flex flex-col items-center justify-center">
+    <app-retro-grid class="absolute inset-0" [angle]="65" [isDark]="false"></app-retro-grid>
 
     <div class="p-4 relative">
-      <!-- Animación de texto -->
       <app-typing-animation
         text="Bienvenidos a"
         [duration]="150"
@@ -45,100 +35,69 @@
           'translate-x-[-50%]',
           'text-xl'
         ]"
-      >
-      </app-typing-animation>
+      ></app-typing-animation>
 
-      <!-- Título AgroIA -->
-      <h1 class="text-9xl font-bold text-center mt-10">AgroIA</h1>
+      <h1 class="text-9xl font-bold text-center mt-10 text-teal-500">AgroIA</h1>
 
-      <!-- Descripción -->
-      <!-- Opcionalmente, puedes agregar padding aquí -->
-      <app-gradual-spacing
-        text="¡Tu aliado inteligente en cada cultivo!"
-        [duration]="500"
-        [delayMultiple]="40"
-        className="text-blue-500"
-      >
-      </app-gradual-spacing>
+      
     </div>
-  </div>
-  <div class="cardContain">
-    <section class="features card">
-      <h2>Características de AgroIA</h2>
-      <ul>
+  </main>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-10">
+    <section class="bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-xl font-bold text-center text-teal-600 mb-4">Características de AgroIA</h2>
+      <ul class="space-y-2">
         <li>Respuestas rápidas y precisas a preguntas frecuentes.</li>
         <li>Asistencia técnica 24/7.</li>
         <li>Consejos personalizados según el tipo de cultivo.</li>
       </ul>
     </section>
 
-    <section class="benefits card">
-      <h2>Beneficios para los agricultores</h2>
-      <ul>
+    <section class="bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-xl font-bold text-center text-teal-600 mb-4">Beneficios para los agricultores</h2>
+      <ul class="space-y-2">
         <li>Optimizar el uso del agua y los fertilizantes.</li>
         <li>Mejorar el control de plagas.</li>
       </ul>
     </section>
 
-    <section class="call-to-action card">
-      <h2>Empieza a usar AgroIA hoy</h2>
-      <p>
-        Explora nuestras funcionalidades y descubre cómo AgroIA puede
-        transformar tu forma de trabajar en el campo.
-      </p>
-      <button class="btm">Comenzar</button>
+    <section class="bg-white p-6 rounded-lg shadow-md text-center">
+      <h2 class="text-xl font-bold text-teal-600 mb-4">Empieza a usar AgroIA hoy</h2>
+      <p class="mb-4">Explora nuestras funcionalidades y descubre cómo AgroIA puede transformar tu forma de trabajar en el campo.</p>
+      <button class="bg-purple-600 text-white px-6 py-2 rounded-lg shadow-lg hover:bg-purple-700">Comenzar</button>
     </section>
   </div>
-  <!-- <aside>
-<img src="assets/Img2.jpg" alt="Fondo">
-  </aside> -->
-    
-  
-</main>
-<footer class="footer">
-  <div class="footer-container">
-    <div class="footer-section">
-      <h4>Sobre Nosotros</h4>
-      <p class="parrafo">
-        Somos una empresa dedicada a proveer soluciones innovadoras.
-      </p>
-    </div>
 
-    <div class="footer-section">
-      <h4>Enlaces</h4>
-      <ul class="footer-links">
-        <li><a href="/about">Acerca de</a></li>
-        <li><a href="/services">Servicios</a></li>
-        <li><a href="/contact">Contacto</a></li>
-        <li><a href="/privacy">Política de privacidad</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-section">
-      <h4>Contáctanos</h4>
-      <p class="parrafo">Teléfono: +123 456 789</p>
-    </div>
-
-    <div class="footer-section">
-      <h4>Síguenos</h4>
-      <div class="social-icons">
-        <a href="https://www.facebook.com" target="_blank" rel="noopener">
-          <i class="fa fa-facebook"></i>
-        </a>
-        <a href="https://www.twitter.com" target="_blank" rel="noopener">
-          <i class="fa fa-twitter"></i>
-        </a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener">
-          <i class="fa fa-instagram"></i>
-        </a>
+  <footer class="bg-gray-900 text-white p-6">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div>
+        <h4 class="font-bold mb-2">Sobre Nosotros</h4>
+        <p>Somos una empresa dedicada a proveer soluciones innovadoras.</p>
+      </div>
+      <div>
+        <h4 class="font-bold mb-2">Enlaces</h4>
+        <ul class="space-y-1">
+          <li><a href="/about" class="hover:underline">Acerca de</a></li>
+          <li><a href="/services" class="hover:underline">Servicios</a></li>
+          <li><a href="/contact" class="hover:underline">Contacto</a></li>
+          <li><a href="/privacy" class="hover:underline">Política de privacidad</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-2">Contáctanos</h4>
+        <p>Teléfono: +123 456 789</p>
+      </div>
+      <div>
+        <h4 class="font-bold mb-2">Síguenos</h4>
+        <div class="flex space-x-4">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener" class="hover:text-blue-500"><i class="fa fa-facebook"></i></a>
+          <a href="https://www.twitter.com" target="_blank" rel="noopener" class="hover:text-blue-400"><i class="fa fa-twitter"></i></a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener" class="hover:text-pink-500"><i class="fa fa-instagram"></i></a>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p class="copyright">
-      &copy; 2024 Code Crafters. Todos los derechos reservados.
-    </p>
-  </div>
-</footer>
+    <div class="mt-4 text-center">
+      <p>&copy; 2024 Code Crafters. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 </div>

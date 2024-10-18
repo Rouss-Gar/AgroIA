@@ -1,0 +1,16 @@
+<div style="padding: 20px;">
+    <h1>Consulta de Agronomía</h1>
+    <form (submit)="handleSubmit(); $event.preventDefault();">
+      <input
+        type="text"
+        [(ngModel)]="question"
+        placeholder="Escribe tu pregunta sobre sumas"
+        name="question"
+        required
+      />
+      <button type="submit">Enviar</button>
+    </form>
+    <h2>Respuesta:</h2>
+    <p>{{ response }}</p>
+</div>
+  

@@ -8,4 +8,5 @@ export const environment = {
         messagingSenderId: "490239798753",
         appId: "1:490239798753:web:07145c3a90bcb13aca76a0"
     }
+    
 };

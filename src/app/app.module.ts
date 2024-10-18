@@ -17,10 +17,13 @@ import { HomeComponent } from "./home/home.component";
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { TypingAnimationComponent } from './components/UI/TypingAnimation';
-import { ChatbotComponent } from './features/chatbot/chatbot.component';
+import { ChatbotComponent } from "./features/chatbot/chatbot.component";
 import { RetroGridComponent } from "./components/UI/RetroGrid";
 import { GradualSpacingComponent } from "./components/UI/GradualSpacing";
 import { NavbarComponent } from "./features/navbar/navbar.component";
+import { AnimatedGradientTextComponent } from "./components/UI/AnimatedGradientText";
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -31,10 +34,12 @@ import { NavbarComponent } from "./features/navbar/navbar.component";
         TypingAnimationComponent,
         RetroGridComponent,
         GradualSpacingComponent,
-        NavbarComponent
+        NavbarComponent,
+        AnimatedGradientTextComponent,
     ],
     imports: [
         BrowserModule,
+        HttpClientModule,
         BrowserAnimationsModule,
         ReactiveFormsModule,
         AppRoutingModule,
