@@ -1,7 +1,7 @@
-<div class="h-full w-full flex items-center justify-center">
-  <div class="w-[50rem] h-full bg-secondary-white shadow-lg overflow-hidden rounded-lg">
+<div class="min-h-screen flex flex-col items-center justify-center">
+  <div class="w-full h-full bg-secondary-white shadow-lg overflow-hidden">
     <!-- Chatbot header with centered image -->
-    <div class="bg-color-tropical-teal text-secondary-white p-4 flex items-center justify-between">
+    <div class="bg-color-tropical-teal h-full text-secondary-white p-4 flex items-center justify-between">
       <div class="flex items-center justify-center">
         <img
           src="../../../assets/Log.png"
@@ -12,18 +12,25 @@
     </div>
 
     <!-- Chat window -->
-    <div #chatWindow class="p-4 h-[29rem] overflow-y-auto bg-secondary-gray">
+    <div class="p-4 h-80 overflow-y-auto bg-secondary-gray">
       <!-- Chat messages -->
       <div *ngFor="let message of messages" class="mb-2">
         <!-- Mensaje del chatbot con avatar -->
         <div *ngIf="message.sender !== 'user'" class="flex items-start space-x-2">
           <!-- Avatar del chatbot -->
           <img [src]="message.avatar" alt="Bot Avatar" class="w-8 h-8 object-cover object-center rounded-full">
-          <!-- Mensaje del chatbot -->
-          <div class="bg-customBlue-blue-dark text-secondary-white p-2 rounded-lg shadow-sm">
-            <p>{{ message.text }}</p>
-            <!-- Time -->
-            <div class="text-body-small text-secondary-white mt-1">{{ message.time }}</div>
+          
+          <!-- Contenedor del mensaje del bot -->
+          <div class="flex flex-col">
+            <!-- Mensaje del chatbot -->
+            <div class="bg-customBlue-blue-dark text-secondary-white p-2 rounded-lg shadow-sm">
+              <p>{{ message.text }}</p>
+            </div>
+
+            <!-- Botón de reproducción solo para mensajes del bot -->
+            <div *ngIf="message.canPlayVoice" class="mt-1">
+              <button (click)="playVoice(message.text)" class="bg-green-500 text-white py-1 px-2 rounded-md">Play</button>
+            </div>
           </div>
         </div>
 
@@ -32,12 +39,12 @@
           <!-- Mensaje del usuario -->
           <div class="bg-customBlue-blue-default text-secondary-white p-2 rounded-lg shadow-sm text-right">
             <p>{{ message.text }}</p>
-            <!-- Time -->
-            <div class="text-body-small text-secondary-white mt-1 text-right">{{ message.time }}</div>
           </div>
           <!-- Avatar del usuario -->
           <img [src]="message.avatar" alt="User Avatar" class="w-8 h-8 rounded-full">
         </div>
+        <!-- Time -->
+        <div class="text-body-small text-secondary-white mt-1 text-right">{{ message.time }}</div>
       </div>
     </div>
 
@@ -71,3 +78,4 @@
     </div>
   </div>
 </div>
+
