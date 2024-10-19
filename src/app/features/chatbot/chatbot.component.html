@@ -29,8 +29,10 @@
 
             <!-- Botón de reproducción solo para mensajes del bot -->
             <div *ngIf="message.canPlayVoice" class="mt-1">
-              <button (click)="playVoice(message.text)" class="bg-green-500 text-white py-1 px-2 rounded-md">Play</button>
-            </div>
+              <button (click)="playVoice(message.text)" class="bg-secondary-white text-white py-1 px-2 rounded-md flex items-center justify-center">
+                <i class="pi pi-volume-up text-lg"></i>
+              </button>
+            </div>            
           </div>
         </div>
 
