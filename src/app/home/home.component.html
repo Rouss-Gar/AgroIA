@@ -1,6 +1,6 @@
-
-<div className="grid grid-cols-5 grid-rows-8 gap-4">
-  <div class="flex w-full h-[8rem] justify-center items-center gap-4 bg-secondary-dark-200 px-4 max-h-dvh ">
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 grid-rows-8 gap-4">
+  <!-- Contenedor Principal -->
+  <div class="flex w-full h-[8rem] justify-center items-center gap-4 bg-secondary-dark-200 px-4 max-h-dvh">
     <!-- Icono al inicio -->
     <img src="assets/Log.png" class="h-[6rem] ml-4 w-[5rem] items-center justify-center py-2 px-2">
     
@@ -13,12 +13,14 @@
     
     <!-- Botones -->
     <div class="flex space-x-4">
-        <button (click)="goTologin()" pButton type="submit" label="Iniciar Sesión" class="w-[150px] bg-color-teal-blue h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-color-tropical-teal before:to-color-light-mint before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-secondary-white">
+        <button (click)="goTologin()" pButton type="submit" label="Iniciar Sesión" class="w-auto sm:w-[150px] bg-color-teal-blue h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-color-tropical-teal before:to-color-light-mint before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-secondary-white">
         </button>
-        <button (click)="goToregister()" pButton type="submit" label="Registrate" class="w-[150px] bg-color-teal-blue h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-color-tropical-teal before:to-color-light-mint before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-secondary-white">
+        <button (click)="goToregister()" pButton type="submit" label="Registrate" class="w-auto sm:w-[150px] bg-color-teal-blue h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-color-tropical-teal before:to-color-light-mint before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-secondary-white">
         </button>
     </div>
   </div>
+
+  <!-- Resto del contenido -->
   <div className="row-start-2">
     <div class="bg-color-deep-navy">      
       <div class="p-4 relative flex flex-col items-center justify-center text-display-large text-xl">
@@ -35,20 +37,21 @@
           ></app-typing-animation>
         <h1 class="text-center text-secondary-white justify-center font-bold mt-10 text-title">AgroIA</h1>
       </div>
+    </div>
   </div>
+
   <div className="row-start-3">
     <div class="row-start-3 flex justify-center items-center h-full">
       <div class="flex w-full bg-secondary-gray-300">
-        <div class="flex-1  bg-secondary-gray-300 flex items-center justify-center text-white">
-          <img src="../../assets/App.png" alt="">
+        <div class="flex-1 bg-secondary-gray-300 flex items-center justify-center text-white">
+          <img src="../../assets/App.png" alt="" class="w-full md:w-3/4">
         </div>
         <div class="flex-1 bg-secondary-gray-300 flex items-center justify-center text-white">
-          <img src="../../assets/App3.png" alt="">
+          <img src="../../assets/App3.png" alt="" class="w-full md:w-3/4">
         </div>
         <div class="flex-1 bg-secondary-gray-300 flex items-center justify-center text-white">
-          <img src="../../assets/App2.png" alt="">
+          <img src="../../assets/App2.png" alt="" class="w-full md:w-3/4">
         </div>
-       
       </div>
     </div>    
   </div>
@@ -57,19 +60,23 @@
     <div class="h-[15rem] w-full bg-secondary-gray-300 flex flex-col items-center justify-center text-center">
       <div class="bg-secondary-white h-[13rem] w-full max-w-[96rem] flex flex-col items-center justify-center text-display-medium">
         <h1 className="mb-4">¿Qué esperas para probar AgroIA?</h1>
-        <button (click)="goTochatbot()" pButton type="submit" label="Empieza" class="w-[160px] bg-color-teal-blue h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-color-tropical-teal before:to-color-light-mint before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-secondary-white">
+        <button (click)="goTochatbot()" pButton type="submit" label="Empieza" class="w-auto sm:w-[160px] bg-color-teal-blue h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-color-tropical-teal before:to-color-light-mint before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-secondary-white">
         </button>
       </div>
     </div>
   </div>
+
+  <!-- Footer -->
   <div className="row-start-5 flex justify-center bg-opacity-0">
     <div class="w-full h-full bg-secondary-dark-200 text-secondary-white">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-center justify-items-center">
+        <!-- Sobre Nosotros -->
         <div class="text-center">
           <h4 class="font-bold mb-2 text-display-small">Sobre Nosotros</h4>
           <p class="text-title-medium">Somos una empresa dedicada a proveer soluciones innovadoras.</p>
         </div>  
-        <div class="text-center ">
+        <!-- Enlaces -->
+        <div class="text-center">
           <h4 class="font-bold mb-2 text-display-small">Enlaces</h4>
           <ul class="space-y-1 text-title-medium">
             <li><a href="/about" class="hover:underline">Acerca de</a></li>          
@@ -77,10 +84,12 @@
             <li><a href="/privacy" class="hover:underline">Política de privacidad</a></li>
           </ul>
         </div>
+        <!-- Contáctanos -->
         <div class="text-center">
           <h4 class="font-bold mb-2 text-display-small">Contáctanos</h4>
           <p class="text-title-medium">Teléfono: +123 456 789</p>
         </div>
+        <!-- Síguenos -->
         <div class="text-center">
           <h4 class="font-bold mb-2 text-display-small">Síguenos</h4>
           <div class="flex space-x-4 justify-center">
@@ -95,87 +104,4 @@
       </div>
     </div>
   </div>
-  
-  
 </div>
-  
-
-<!-- <div>
-
-
-  <main class="relative w-full h-[15rem] flex flex-col items-center justify-center">
-    <app-retro-grid class="absolute inset-0" [angle]="65" [isDark]="false"></app-retro-grid>
-    <div class="p-4 relative flex flex-col items-center justify-center">
-      <app-typing-animation
-        text="Bienvenidos a"
-        [duration]="150"
-        [ngClass]="[
-          'text-customBlue-blue-dark',
-          'absolute',
-          'top-4',
-          'transform',
-          'text-display-small'
-        ]"
-      ></app-typing-animation>
-      <h1 class="text-center justify-center font-bold mt-10 text-title">AgroIA</h1>
-    </div>
-  </main>
-
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-10">
-    <section class="bg-white p-6 rounded-lg shadow-md">
-      <h2 class="text-xl font-bold text-center text-secondary-dark-100 mb-4">Características de AgroIA</h2>
-      <ul class="space-y-2">
-        <li>Respuestas rápidas y precisas a preguntas frecuentes.</li>
-        <li>Asistencia técnica 24/7.</li>
-        <li>Consejos personalizados según el tipo de cultivo.</li>
-      </ul>
-    </section>
-
-    <section class="bg-white p-6 rounded-lg shadow-md">
-      <h2 class="text-xl font-bold text-center text-secondary-dark-100 mb-4">Beneficios para los agricultores</h2>
-      <ul class="space-y-2">
-        <li>Optimizar el uso del agua y los fertilizantes.</li>
-        <li>Mejorar el control de plagas.</li>
-      </ul>
-    </section>
-
-    <section class="bg-white p-6 rounded-lg shadow-md text-center">
-      <h2 class="text-xl font-bold text-secondary-dark-100 mb-4">Empieza a usar AgroIA hoy</h2>
-      <p class="mb-4">Explora nuestras funcionalidades y descubre cómo AgroIA puede transformar tu forma de trabajar en el campo.</p>
-      <button class="bg-purple-600 text-secondary-white px-6 py-2 rounded-lg shadow-lg hover:bg-purple-700">Comenzar</button>
-    </section>
-  </div>
-
-  <footer class="bg-secondary-gray text-secondary-white text-center p-6">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-      <div>
-        <h4 class="font-bold mb-2">Sobre Nosotros</h4>
-        <p>Somos una empresa dedicada a proveer soluciones innovadoras.</p>
-      </div>
-      <div>
-        <h4 class="font-bold mb-2">Enlaces</h4>
-        <ul class="space-y-1">
-          <li><a href="/about" class="hover:underline">Acerca de</a></li>
-          <li><a href="/services" class="hover:underline">Servicios</a></li>
-          <li><a href="/contact" class="hover:underline">Contacto</a></li>
-          <li><a href="/privacy" class="hover:underline">Política de privacidad</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-bold mb-2">Contáctanos</h4>
-        <p>Teléfono: +123 456 789</p>
-      </div>
-      <div>
-        <h4 class="font-bold mb-2">Síguenos</h4>
-        <div class="flex space-x-4 justify-center">
-          <a href="https://www.facebook.com" target="_blank" rel="noopener" class="hover:text-blue-500"><i class="fa fa-facebook"></i></a>
-          <a href="https://www.twitter.com" target="_blank" rel="noopener" class="hover:text-blue-400"><i class="fa fa-twitter"></i></a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener" class="hover:text-pink-500"><i class="fa fa-instagram"></i></a>
-        </div>
-      </div>
-    </div>
-    <div class="mt-4 text-center pp-2">
-      <p>&copy; 2024 Code Crafters. Todos los derechos reservados.</p>
-    </div>
-  </footer>
-</div> -->

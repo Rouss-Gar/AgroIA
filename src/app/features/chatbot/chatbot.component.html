@@ -1,14 +1,17 @@
 <div class="min-h-screen flex flex-col items-center justify-center">
-  <div class="w-full h-full bg-secondary-white shadow-lg overflow-hidden">
+  <div class="w-full max-w-4xl bg-secondary-white shadow-lg overflow-hidden">
     <!-- Chatbot header with centered image -->
-    <div class="bg-color-tropical-teal h-full text-secondary-white p-4 flex items-center justify-between">
+    <div class="bg-color-tropical-teal p-4 flex items-center justify-between">
       <div class="flex items-center justify-center">
         <img
           src="../../../assets/Log.png"
-          class="h-[4rem] w-[4rem] object-contain"
+          class="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 object-contain"
+          alt="Logo"
         />
       </div>
-      <span class="text-title-large">Tu Asesor Agronómico</span>
+      <span class="text-title-large text-secondary-white text-sm md:text-lg lg:text-xl">
+        Tu Asesor Agronómico
+      </span>
     </div>
 
     <!-- Chat window -->
@@ -18,13 +21,13 @@
         <!-- Mensaje del chatbot con avatar -->
         <div *ngIf="message.sender !== 'user'" class="flex items-start space-x-2">
           <!-- Avatar del chatbot -->
-          <img [src]="message.avatar" alt="Bot Avatar" class="w-8 h-8 object-cover object-center rounded-full">
+          <img [src]="message.avatar" alt="Bot Avatar" class="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 object-cover object-center rounded-full">
           
           <!-- Contenedor del mensaje del bot -->
           <div class="flex flex-col">
             <!-- Mensaje del chatbot -->
-            <div class="bg-customBlue-blue-dark text-secondary-white p-2 rounded-lg shadow-sm">
-              <p>{{ message.text }}</p>
+            <div class="bg-customBlue-blue-dark text-secondary-white p-2 md:p-3 rounded-lg shadow-sm">
+              <p class="text-xs md:text-sm lg:text-base">{{ message.text }}</p>
             </div>
 
             <!-- Botón de reproducción solo para mensajes del bot -->
@@ -39,11 +42,11 @@
         <!-- Mensaje del usuario con avatar alineado a la derecha -->
         <div *ngIf="message.sender === 'user'" class="flex items-end justify-end space-x-2">
           <!-- Mensaje del usuario -->
-          <div class="bg-customBlue-blue-default text-secondary-white p-2 rounded-lg shadow-sm text-right">
-            <p>{{ message.text }}</p>
+          <div class="bg-customBlue-blue-default text-secondary-white p-2 md:p-3 rounded-lg shadow-sm text-right">
+            <p class="text-xs md:text-sm lg:text-base">{{ message.text }}</p>
           </div>
           <!-- Avatar del usuario -->
-          <img [src]="message.avatar" alt="User Avatar" class="w-8 h-8 rounded-full">
+          <img [src]="message.avatar" alt="User Avatar" class="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-full">
         </div>
         <!-- Time -->
         <div class="text-body-small text-secondary-white mt-1 text-right">{{ message.time }}</div>
@@ -59,7 +62,7 @@
           [(ngModel)]="question"
           placeholder="Escribe tu pregunta..."
           name="question"
-          class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2"
+          class="w-full p-2 md:p-3 border rounded-lg focus:outline-none focus:ring-2"
           required
         />
 
@@ -80,4 +83,3 @@
     </div>
   </div>
 </div>
-

@@ -1,33 +1,34 @@
-<div class="w-full max-w-md mx-auto mt-20 p-10 bg-gradient-to-b from-[#0B6477] to-[#80ED99] rounded-lg shadow-lg">
+<div class="w-full max-w-md mx-auto mt-10 p-6 sm:p-10 bg-customBlue-blue-dark  from-color-teal-blue rounded-lg shadow-lg transition-all duration-300 hover:shadow-[0_0_20px_#0AD1C8]">
   <div class="flex justify-center mb-4">
-    <img src="assets/Log.png" alt="logo" class="w-32" />
+    <img src="assets/Log.png" alt="logo" class="w-24 sm:w-32" />
   </div>
-  <h2 class="text-2xl text-white text-center mb-2">Regístrate</h2>
-  <h3 class="text-lg text-white text-center mb-4">Crear tu cuenta</h3>
+  <h2 class="text-secondary-white text-center mb-4 form-heading text-display-medium">Registrate</h2>
+  <h3 class="text-lg sm:text-xl text-secondary-white text-center mb-4">Crear tu cuenta</h3>
 
   <form (ngSubmit)="register()" class="space-y-4">
-
     <div class="relative">
-      <input type="email" pInputText id="email" [(ngModel)]="email" name="email" placeholder="Correo" required 
-        class="w-full p-2 bg-gray-300 bg-opacity-30 border border-transparent rounded-md focus:ring-2 focus:ring-green-600 focus:border-green-600 placeholder-gray-400 text-black" />
+      <input type="email" pInputText id="email" [(ngModel)]="email" name="email" placeholder="Correo" required
+        class="w-full p-2 bg-color-mint-green bg-opacity-30 border border-transparent rounded-md focus:ring-2 focus:ring-color-light-mint focus:border-color-light-mint placeholder-secondary-white text-secondary-white" />
     </div>
 
     <div class="relative">
-      <input [type]="showPassword ? 'text':'password'" pInputText id="password" [(ngModel)]="password" name="password" placeholder="Contraseña" required 
-        class="w-full p-2 bg-gray-300 bg-opacity-30 border border-transparent rounded-md focus:ring-2 focus:ring-green-600 focus:border-green-600 placeholder-gray-400 text-black" />
+      <input [type]="showPassword ? 'text':'password'" pInputText id="password" [(ngModel)]="password" name="password" placeholder="Contraseña" required
+        class="w-full p-2 bg-color-mint-green bg-opacity-30 border border-transparent rounded-md focus:ring-2 focus:ring-color-light-mint focus:border-color-light-mint placeholder-secondary-white text-secondary-white" />
     </div>
 
-    <div class="flex items-center justify-between text-white">
+    <div class="flex items-center justify-between text-secondary-white">
       <p-checkbox label="Ver Contraseña" [(ngModel)]="showPassword" [binary]="true" [ngModelOptions]="{ standalone: true }"></p-checkbox>
     </div>
 
     <div>
-      <button pButton type="submit" label="Regístrate" class="w-full py-2 bg-green-700 hover:bg-green-800 text-white font-semibold rounded-md" [disabled]="isLoading"></button>
+      <button pButton type="submit" label="Regístrate" class="w-full py-2 bg-color-teal-blue hover:bg-color-light-mint text-secondary-white font-semibold rounded-md transition-all duration-500 ease-in-out hover:scale-105 shadow-md" [disabled]="isLoading">
+        
+      </button>
     </div>
 
     <div class="text-center mt-4">
-      <span class="text-white">¿Ya tienes cuenta?</span>
-      <a class="text-blue-700 hover:underline" href="/login">Inicia Sesión</a>
+      <span class="text-secondary-white">¿Ya tienes Cuenta?</span>
+      <a class="text-secondary-white ml-2 font-bold hover:underline" href="/login">Inicar Sesion</a>
     </div>
   </form>
 </div>
