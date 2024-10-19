@@ -23,6 +23,7 @@ import { GradualSpacingComponent } from "./components/UI/GradualSpacing";
 import { NavbarComponent } from "./features/navbar/navbar.component";
 import { AnimatedGradientTextComponent } from "./components/UI/AnimatedGradientText";
 import { HttpClientModule } from '@angular/common/http';
+import { AvatarComponent, AvatarImageComponent, AvatarFallbackComponent } from "./components/UI/Avatar";
 
 @NgModule({
     declarations: [
@@ -34,6 +35,9 @@ import { HttpClientModule } from '@angular/common/http';
         TypingAnimationComponent,
         RetroGridComponent,
         GradualSpacingComponent,
+        AvatarComponent,
+        AvatarFallbackComponent,
+        AvatarImageComponent,
         NavbarComponent,
         AnimatedGradientTextComponent,
     ],

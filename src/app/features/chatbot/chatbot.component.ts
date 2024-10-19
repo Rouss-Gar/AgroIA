@@ -9,8 +9,9 @@ export class ChatbotComponent {
   question: string = '';
   response: string = '';
   recognition: any;
-  messages: { text: string; sender: string; time: string }[] = [];
-
+  messages: { text: string; sender: string; time: string; avatar: string }[] = [];  
+  userAvatar: string = '../../../assets/avatarChatbot.png';  
+  botAvatar: string = '../../../assets/avatarUsuario.png';    
 
   constructor(private witAiService: WitAiService) {
     const { webkitSpeechRecognition }: any = window;
@@ -20,9 +21,9 @@ export class ChatbotComponent {
     this.recognition.iterimResults = false;
 
     this.recognition.onresult = (event: any) => {
-      this.question = event.results[0][0].transcript;  // Convierte la voz a texto
+      this.question = event.results[0][0].transcript;  
       console.log('Texto detectado por voz:', this.question);
-      this.handleSubmit();  // Enviar la pregunta obtenida por voz
+      this.handleSubmit();  
     };
     this.recognition.onerror = (event: any) => {
       console.error('Error en el reconocimiento de voz:', event.error);
@@ -33,19 +34,17 @@ export class ChatbotComponent {
     this.recognition.start();
   }
 
-  // Método para enviar mensajes y recibir respuestas del bot
   async handleSubmit() {
     if (this.question.trim()) {
-      // Agregar el mensaje del usuario al array de mensajes
       const userMessage = {
         text: this.question,
         sender: 'user',
-        time: this.getTime()
+        time: this.getTime(),
+        avatar: this.userAvatar
       };
       this.messages.push(userMessage);
 
       try {
-        
         const data = await this.witAiService.getWitAiResponse(this.question);
         const { entities } = data;
 
@@ -60,16 +59,15 @@ export class ChatbotComponent {
         } else {
           botResponse = 'No se encontraron entidades.';
         }
-
-        // Agregar la respuesta del bot al array de mensajes
+      
         const botMessage = {
           text: botResponse,
           sender: 'bot',
-          time: this.getTime()
+          time: this.getTime(),
+          avatar: this.botAvatar
         };
         this.messages.push(botMessage);
 
-        // Limpiar el campo de entrada después de enviar
         this.question = '';
 
         console.log('Entidades procesadas:', entities);
@@ -78,16 +76,16 @@ export class ChatbotComponent {
         const errorMessage = {
           text: 'Hubo un error al obtener la respuesta.',
           sender: 'bot',
-          time: this.getTime()
+          time: this.getTime(),
+          avatar: this.botAvatar
         };
         this.messages.push(errorMessage);
       }
     }
   }
 
-  // Método para obtener la hora actual
   getTime(): string {
     const date = new Date();
-    return `${date.getHours()}:${('0' + date.getMinutes()).slice(-2)} - ${date.toLocaleDateString()}`;
+    return `${date.getHours()}:${('0' + date.getMinutes()).slice(-2)} `;
   }
 }

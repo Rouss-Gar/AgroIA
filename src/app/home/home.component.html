@@ -1,45 +1,39 @@
 <div>
-  <header class="bg-gray-900 rounded-lg p-5">
+  <header class="bg-secondary-gray p-5">
     <nav class="flex justify-between items-center">
       <img src="assets/Log.png" alt="logo" class="w-12 m-4" />
       <div id="mobile-menu" class="md:hidden flex flex-col cursor-pointer">
-        <span class="w-6 h-0.5 bg-white mb-1"></span>
-        <span class="w-6 h-0.5 bg-white mb-1"></span>
-        <span class="w-6 h-0.5 bg-white"></span>
+       
       </div>
-      <ul class="hidden md:flex space-x-6">
-        <li><a href="/home" class="text-white hover:bg-teal-600 rounded-lg px-3 py-2">Inicio</a></li>
-        <li><a href="#" class="text-white hover:bg-teal-600 rounded-lg px-3 py-2">Acerca de nosotros</a></li>
-        <li><a href="#" class="text-white hover:bg-teal-600 rounded-lg px-3 py-2">Contáctanos</a></li>
+      <ul class="hidden text-display-medium md:flex space-x-6">
+        <li><a href="/home" class="text-secondary-white hover:bg-teal-600 rounded-lg px-3 py-2">Inicio</a></li>
+        <li><a href="#" class="text-secondary-white hover:bg-teal-600 rounded-lg px-3 py-2">Acerca de nosotros</a></li>
+        <li><a href="#" class="text-secondary-white hover:bg-teal-600 rounded-lg px-3 py-2">Contáctanos</a></li>
       </ul>
-      <div class="hidden md:flex space-x-4">
-        <button (click)="goTologin()" class="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-blue-700">Iniciar Sesión</button>
-        <button (click)="goToregister()" class="bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg hover:bg-green-700">Registrarse</button>
+      <div class="hidden md:flex space-x-4 py-4 px-4">
+        <button (click)="goTologin()" pButton type="submit" label="Iniciar Sesión" class="w-[150px] bg-color-teal-blue h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-color-tropical-teal before:to-color-light-mint before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-secondary-white">
+        </button>
+        <button (click)="goToregister()" pButton type="submit" label="Registrate" class="w-[150px] bg-color-teal-blue h-[50px] my-3 flex items-center justify-center rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-color-tropical-teal before:to-color-light-mint before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-xl hover:before:left-0 text-secondary-white">
+        </button>
       </div>
     </nav>
   </header>
 
-  <main class="relative w-full h-full flex flex-col items-center justify-center">
+  <main class="relative w-full h-[15rem] flex flex-col items-center justify-center">
     <app-retro-grid class="absolute inset-0" [angle]="65" [isDark]="false"></app-retro-grid>
-
-    <div class="p-4 relative">
+    <div class="p-4 relative flex flex-col items-center justify-center">
       <app-typing-animation
         text="Bienvenidos a"
         [duration]="150"
         [ngClass]="[
-          'text-blue-500',
+          'text-customBlue-blue-dark',
           'absolute',
-          'top-0',
-          'left-1/2',
+          'top-4',
           'transform',
-          'translate-x-[-50%]',
-          'text-xl'
+          'text-display-small'
         ]"
       ></app-typing-animation>
-
-      <h1 class="text-9xl font-bold text-center mt-10 text-teal-500">AgroIA</h1>
-
-      
+      <h1 class="text-center justify-center font-bold mt-10 text-title">AgroIA</h1>
     </div>
   </main>
 

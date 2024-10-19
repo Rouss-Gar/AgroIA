@@ -34,6 +34,7 @@ module.exports = {
       sans: ["Lato", "sans-serif"],
     },
     fontSize: {
+      "title": ["80px", { fontWeight: "100" }],
       "display-large": ["32px", { fontWeight: "900" }],
       "display-medium": ["30px", { fontWeight: "700" }],
       "display-small": ["28px", { fontWeight: "700" }],
@@ -102,11 +103,16 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "grid": {
+          "0%": { transform: "translateY(-50%)" },
+          "100%": { transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "gradient": "gradient 8s linear infinite",
+        "grid": "grid 15s linear infinite",
       },
     },
   },

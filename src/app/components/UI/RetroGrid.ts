@@ -34,6 +34,6 @@ import { Component, Input } from '@angular/core';
   ],
 })
 export class RetroGridComponent {
-  @Input() angle: number = 65; // Ángulo predeterminado
-  @Input() isDark: boolean = false; // Para determinar si se utiliza el tema oscuro
+  @Input() angle: number = 65; 
+  @Input() isDark: boolean = false; 
 }
