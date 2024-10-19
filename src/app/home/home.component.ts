@@ -18,4 +18,6 @@ goTologin(){this.router.navigate(['/login'])}
 
 goToregister(){this.router.navigate(['/register'])}
 
+goTochatbot(){this.router.navigate(['./chatbot'])}
+
 }

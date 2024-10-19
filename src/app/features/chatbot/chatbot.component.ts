@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { WitAiService } from '@/src/service/wit.service';
 
 @Component({
@@ -6,6 +6,8 @@ import { WitAiService } from '@/src/service/wit.service';
   templateUrl: './chatbot.component.html',
 })
 export class ChatbotComponent {
+  @ViewChild('chatWindow') private chatWindow!: ElementRef; // Referencia al contenedor del chat
+
   question: string = '';
   response: string = '';
   recognition: any;
@@ -43,6 +45,7 @@ export class ChatbotComponent {
         avatar: this.userAvatar
       };
       this.messages.push(userMessage);
+      this.scrollToBottom(); // Desplaza el chat al final después de agregar el mensaje del usuario
 
       try {
         const data = await this.witAiService.getWitAiResponse(this.question);
@@ -67,6 +70,11 @@ export class ChatbotComponent {
           avatar: this.botAvatar
         };
         this.messages.push(botMessage);
+        
+        // Usamos setTimeout para asegurar que se llame después de que Angular actualice la vista
+        setTimeout(() => {
+          this.scrollToBottom(); // Desplaza el chat al final después de agregar el mensaje del bot
+        }, 0); 
 
         this.question = '';
 
@@ -80,6 +88,11 @@ export class ChatbotComponent {
           avatar: this.botAvatar
         };
         this.messages.push(errorMessage);
+        
+        // Aseguramos el desplazamiento después de agregar el mensaje de error
+        setTimeout(() => {
+          this.scrollToBottom(); // Desplaza el chat al final en caso de error
+        }, 0);
       }
     }
   }
@@ -87,5 +100,14 @@ export class ChatbotComponent {
   getTime(): string {
     const date = new Date();
     return `${date.getHours()}:${('0' + date.getMinutes()).slice(-2)} `;
+  }
+
+  // Función para desplazarse al final del chat
+  private scrollToBottom(): void {
+    try {
+      this.chatWindow.nativeElement.scrollTop = this.chatWindow.nativeElement.scrollHeight;
+    } catch (err) {
+      console.error('No se pudo desplazar hacia abajo', err);
+    }
   }
 }

@@ -4,7 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './features/register/register.component';
 import { LoginComponent } from './features/login/login.component';
 import { ChatbotComponent } from './features/chatbot/chatbot.component';
-import { NavbarComponent } from './features/navbar/navbar.component';
+
 
 const routes: Routes = [
   {
@@ -49,10 +49,7 @@ const routes: Routes = [
     redirectTo: '/navbar',
     pathMatch: 'full',
   },
-  {
-    path: 'navbar',
-    component: NavbarComponent,
-  },
+
 
 ];
 
